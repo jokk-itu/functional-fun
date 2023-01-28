@@ -1,15 +1,17 @@
 ﻿module Util
 
-let sum (n:int) : int =
-    let rec aux n' c =
-        match n' with
-        | 1 -> c n'
-        | _ -> aux (n' - 1) (fun x -> c (x + n'))
-    aux n id
+(* Returns the sum of a *)
+let sum a =
+    let rec aux c =
+        function
+        | 1 -> c 1
+        | b -> aux (fun x -> c (x + b)) (b - 1)
+    aux id a
 
-let fac n =
-    let rec aux n' c =
-        match n' with
-        | 1 -> c n'
-        | _ -> aux (n' - 1) (fun x -> c (x * n'))
-    aux n id
+(* Returns the factorial of a *)
+let fac a =
+    let rec aux c =
+        function
+        | 1 -> c 1
+        | b -> aux (fun x -> c (x * b)) (b - 1)
+    aux id a
