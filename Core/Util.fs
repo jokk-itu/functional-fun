@@ -17,3 +17,15 @@ let fac a =
         | b -> aux (fun x -> c (x * b)) (b - 1)
     if a < 0 then invalidArg (nameof a) "Must not be less than Zero"
     else aux id a
+
+(* insertion sort as descending *)
+let insertionSort a =
+    let rec aux acc =
+        function
+        | [] -> acc
+        | x::[] -> x::acc
+        | x::y::xs ->
+            if x < y then aux (x::acc) (y::xs)
+            else aux (y::acc) (x::xs)
+
+    aux [] a
