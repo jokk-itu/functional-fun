@@ -1,4 +1,4 @@
-module Tests
+module BinTreeTests
 
 open Xunit
 open BinTree

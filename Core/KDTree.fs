@@ -6,8 +6,8 @@ type IPoint<'a> =
 type TwoDimensionalPoint<'a> =
     { X: 'a; Y: 'a }
     interface IPoint<'a> with
-        member x.Coordinate d = 
-            if d &&& 1 = 0 then x.X else x.Y
+        member x.Coordinate depth = 
+            if depth &&& 1 = 0 then x.X else x.Y
 
 type T<'a> =
     | Leaf
